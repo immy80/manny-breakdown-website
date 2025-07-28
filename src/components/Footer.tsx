@@ -8,8 +8,8 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <div className="text-2xl font-bold mb-4">
-              <span className="text-primary">ROAD</span>
-              <span className="text-white">BUDDY</span>
+              <span className="text-primary">CHESHIRE</span>
+              <span className="text-white"> BREAKDOWN RECOVERY</span>
             </div>
             <p className="text-secondary-foreground/80 mb-4">
               Your trusted 24/7 mobile automotive service across England. Fast, reliable, and professional assistance when you need it most.
@@ -43,7 +43,7 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-4 h-4" />
-                <span>info@roadbuddy.co.uk</span>
+                <span>info@cheshirebreakdownrecovery.co.uk</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MapPin className="w-4 h-4" />
@@ -66,7 +66,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-secondary-foreground/20 mt-8 pt-8 text-center text-secondary-foreground/60">
-          <p>&copy; 2024 Road Buddy. All rights reserved. Professional automotive services across England.</p>
+          <p>&copy; 2024 Cheshire Breakdown Recovery. All rights reserved. Professional automotive services across England.</p>
         </div>
       </div>
     </footer>

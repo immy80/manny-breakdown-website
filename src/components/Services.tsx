@@ -8,22 +8,22 @@ const Services = () => {
   const services = [
     {
       title: "Car Breakdown Services",
-      description: "Stranded on the road? Road Buddy offers nationwide breakdown recovery across England—day or night. Whether it's a flat battery, engine failure, or accident, our recovery team is ready to help.",
+      description: "Stranded on the road? Cheshire Breakdown Recovery offers nationwide breakdown recovery across England—day or night. Whether it's a flat battery, engine failure, or accident, our recovery team is ready to help.",
       image: breakdownImage,
     },
     {
       title: "Mobile Tyre Fitting",
-      description: "Looking for fast, convenient mobile tyre fitting? Road Buddy provides expert tyre replacement and puncture repair at your home, workplace, or roadside across England.",
+      description: "Looking for fast, convenient mobile tyre fitting? Cheshire Breakdown Recovery provides expert tyre replacement and puncture repair at your home, workplace, or roadside across England.",
       image: tireImage,
     },
     {
       title: "Battery & Jump Start",
-      description: "Dead battery? Don't worry! Road Buddy offers rapid battery replacement and jump-start services anywhere in England. We'll get your vehicle running again quickly and safely.",
+      description: "Dead battery? Don't worry! Cheshire Breakdown Recovery offers rapid battery replacement and jump-start services anywhere in England. We'll get your vehicle running again quickly and safely.",
       image: batteryImage,
     },
     {
       title: "Emergency Refuelling",
-      description: "Out of fuel? Road Buddy offers fast, reliable emergency refuelling anywhere in England—day or night. Whether you're at home, work, or roadside, we deliver petrol or diesel directly to your vehicle.",
+      description: "Out of fuel? Cheshire Breakdown Recovery offers fast, reliable emergency refuelling anywhere in England—day or night. Whether you're at home, work, or roadside, we deliver petrol or diesel directly to your vehicle.",
       image: fuelImage,
     },
   ];

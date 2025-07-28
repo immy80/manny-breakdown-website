@@ -41,8 +41,8 @@ const Header = () => {
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
             <div className="text-2xl font-bold">
-              <span className="text-primary">ROAD</span>
-              <span className="text-secondary">BUDDY</span>
+              <span className="text-primary">CHESHIRE</span>
+              <span className="text-secondary"> BREAKDOWN RECOVERY</span>
             </div>
           </div>
 
