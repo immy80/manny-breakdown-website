@@ -18,9 +18,9 @@ const Header = () => {
       <div className="bg-secondary text-secondary-foreground">
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex space-x-4">
-            <a href="tel:07411856464" className="flex items-center space-x-1 hover:text-accent transition-colors">
+            <a href="tel:07940553685" className="flex items-center space-x-1 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
-              <span>Call us: 07411 856464</span>
+              <span>Call us: 07940 553685</span>
             </a>
           </div>
           <div className="flex space-x-2">

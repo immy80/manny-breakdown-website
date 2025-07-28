@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="space-y-3 text-secondary-foreground/80">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>07411 856464</span>
+                <span>07940 553685</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MessageCircle className="w-4 h-4" />
@@ -59,7 +59,7 @@ const Footer = () => {
               Need immediate assistance? Our emergency team is always ready to help.
             </p>
             <div className="bg-primary/20 p-4 rounded-lg">
-              <p className="text-primary font-bold text-xl">07411 856464</p>
+              <p className="text-primary font-bold text-xl">07940 553685</p>
               <p className="text-xs">Available 24 hours a day</p>
             </div>
           </div>

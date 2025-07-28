@@ -27,7 +27,7 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-2xl font-bold text-primary mb-2">07411 856464</p>
+                <p className="text-2xl font-bold text-primary mb-2">07940 553685</p>
                 <p className="text-muted-foreground">Available 24/7 for emergency assistance</p>
               </CardContent>
             </Card>
