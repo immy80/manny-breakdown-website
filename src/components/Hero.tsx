@@ -27,7 +27,7 @@ const Hero = () => {
     >
       <div className="container mx-auto px-4 text-center text-white animate-fade-in">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
-          24 Hour Mobile Tyre Service
+          24 Hour Breakdown Recovery
         </h1>
         
         <div className="max-w-4xl mx-auto mb-8">
