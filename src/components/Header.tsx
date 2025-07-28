@@ -28,7 +28,7 @@ const Header = () => {
               <MessageCircle className="w-4 h-4 mr-1" />
               WhatsApp
             </Button>
-            <Button size="sm" variant="outline" className="border-white text-white hover:bg-white hover:text-secondary">
+            <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
               <Phone className="w-4 h-4 mr-1" />
               Call us
             </Button>
