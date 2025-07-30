@@ -70,7 +70,7 @@ const Contact = () => {
                     <MapPin className="w-5 h-5 text-primary" />
                     <div>
                       <h3 className="font-semibold">Coverage Area</h3>
-                      <p className="text-sm text-muted-foreground">All of England</p>
+                      <p className="text-sm text-muted-foreground">United Kingdom</p>
                     </div>
                   </div>
                 </CardContent>
