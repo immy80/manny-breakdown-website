@@ -34,10 +34,16 @@ const Header = () => {
                 WhatsApp 07940553685
               </a>
             </Button>
-            <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
+            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
+              <a href="https://wa.me/447561762745" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-1" />
+                WhatsApp 07561 762745
+              </a>
+            </Button>
+            {/* <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
               <Phone className="w-4 h-4 mr-1" />
               Call us
-            </Button>
+            </Button> */}
           </div>
         </div>
       </div>
