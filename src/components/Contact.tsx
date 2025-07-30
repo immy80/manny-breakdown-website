@@ -50,7 +50,7 @@ const Contact = () => {
       // For now, just show success message - in production you'd send to your email service
       toast({
         title: "Quote request sent!",
-        description: "We'll get back to you within 24 hours.",
+        description: "We'll get back to you as soon as we can.",
       });
       
       form.reset();
