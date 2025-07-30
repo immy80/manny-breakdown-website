@@ -7,7 +7,7 @@ const Header = () => {
     { name: "Home", href: "#" },
     { name: "Breakdown Recovery", href: "#services" },
     { name: "Battery Fitting", href: "#services" },
-    { name: "Jump Start", href: "#services" },
+    { name: "Jump Start", href: "/" },
     { name: "Mobile Tyre Fitting", href: "#services" },
     { name: "Contact Us", href: "#contact" },
   ];
