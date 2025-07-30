@@ -5,10 +5,10 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 const Header = () => {
   const navigation = [
     { name: "Home", href: "#" },
-    { name: "Breakdown Recovery", href: "#" },
-    { name: "Battery Fitting", href: "#" },
+    { name: "Breakdown Recovery", href: "/home" },
+    { name: "Battery Fitting", href: "#services" },
     { name: "Jump Start", href: "/jump-start" },
-    { name: "Mobile Tyre Fitting", href: "#" },
+    { name: "Mobile Tyre Fitting", href: "#services" },
     { name: "Contact Us", href: "#contact" },
   ];
 
