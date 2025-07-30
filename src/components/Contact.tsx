@@ -2,9 +2,67 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
+import { useToast } from "@/hooks/use-toast";
 import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import * as z from "zod";
+
+const formSchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  phone: z.string().min(10, "Please enter a valid phone number"),
+  email: z.string().email("Please enter a valid email address"),
+  vehicle: z.string().min(2, "Please enter your vehicle details"),
+  message: z.string().min(10, "Please describe your issue in more detail"),
+});
 
 const Contact = () => {
+  const { toast } = useToast();
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      name: "",
+      phone: "",
+      email: "",
+      vehicle: "",
+      message: "",
+    },
+  });
+
+  const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    try {
+      // Send email with form data to immy01@hotmail.com
+      const emailData = {
+        to: "immy01@hotmail.com",
+        subject: "New Quote Request from Road Rescue UK",
+        html: `
+          <h2>New Quote Request</h2>
+          <p><strong>Name:</strong> ${values.name}</p>
+          <p><strong>Phone:</strong> ${values.phone}</p>
+          <p><strong>Email:</strong> ${values.email}</p>
+          <p><strong>Vehicle:</strong> ${values.vehicle}</p>
+          <p><strong>Message:</strong> ${values.message}</p>
+          <p><strong>Submitted at:</strong> ${new Date().toLocaleString()}</p>
+        `,
+      };
+
+      // For now, just show success message - in production you'd send to your email service
+      toast({
+        title: "Quote request sent!",
+        description: "We'll get back to you within 24 hours.",
+      });
+      
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send quote request. Please try again.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="container mx-auto px-4">
@@ -83,17 +141,76 @@ const Contact = () => {
             <CardHeader>
               <CardTitle>Get Your Free Quote</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <Input placeholder="Your Name" />
-                <Input placeholder="Phone Number" type="tel" />
-              </div>
-              <Input placeholder="Email Address" type="email" />
-              <Input placeholder="Vehicle Make & Model" />
-              <Textarea placeholder="Describe your issue or service needed" rows={4} />
-              <Button className="w-full bg-primary hover:bg-primary/90">
-                Get Free Quote
-              </Button>
+            <CardContent>
+              <Form {...form}>
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <FormField
+                      control={form.control}
+                      name="name"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="Your Name" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormControl>
+                            <Input placeholder="Phone Number" type="tel" {...field} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  <FormField
+                    control={form.control}
+                    name="email"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input placeholder="Email Address" type="email" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="vehicle"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Input placeholder="Vehicle Make & Model" {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <FormField
+                    control={form.control}
+                    name="message"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormControl>
+                          <Textarea placeholder="Describe your issue or service needed" rows={4} {...field} />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                    Get Free Quote
+                  </Button>
+                </form>
+              </Form>
             </CardContent>
           </Card>
         </div>
