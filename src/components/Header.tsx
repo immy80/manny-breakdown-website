@@ -27,7 +27,7 @@ const Header = () => {
               <span>Call us: 07561 762745</span>
             </a>
           </div>
-          <div className="flex space-x-2">
+          <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
             <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
               <a href="https://wa.me/447940553685" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-1" />
