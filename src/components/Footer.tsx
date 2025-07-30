@@ -59,7 +59,7 @@ const Footer = () => {
               Need immediate assistance? Our emergency team is always ready to help.
             </p>
             <div className="bg-primary/20 p-4 rounded-lg">
-              <p className="text-primary font-bold text-xl">07940 553685</p>
+              <p className="text-primary font-bold text-xl">07940 553685 or 07561 762745</p>
               <p className="text-xs">Available 24 hours a day</p>
             </div>
           </div>
