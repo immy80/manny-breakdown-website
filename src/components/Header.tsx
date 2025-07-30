@@ -22,7 +22,7 @@ const Header = () => {
               <Phone className="w-4 h-4" />
               <span>Call us: 07940 553685</span>
             </a>
-            <a href="tel:07940553685" className="flex items-center space-x-1 hover:text-accent transition-colors">
+            <a href="tel:07561762745" className="flex items-center space-x-1 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
               <span>Call us: 07561 762745</span>
             </a>
