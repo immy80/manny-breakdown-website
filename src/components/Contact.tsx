@@ -40,9 +40,11 @@ const Contact = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Button className="bg-green-600 hover:bg-green-700 text-white">
-                  <MessageCircle className="w-4 h-4 mr-2" />
-                  Chat on WhatsApp
+                <Button className="bg-green-600 hover:bg-green-700 text-white" asChild>
+                  <a href="https://wa.me/447940553685" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    Chat on WhatsApp
+                  </a>
                 </Button>
                 <p className="text-muted-foreground mt-2">Quick response guaranteed</p>
               </CardContent>

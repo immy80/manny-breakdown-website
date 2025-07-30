@@ -24,9 +24,11 @@ const Header = () => {
             </a>
           </div>
           <div className="flex space-x-2">
-            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700">
-              <MessageCircle className="w-4 h-4 mr-1" />
-              WhatsApp
+            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
+              <a href="https://wa.me/447940553685" target="_blank" rel="noopener noreferrer">
+                <MessageCircle className="w-4 h-4 mr-1" />
+                WhatsApp
+              </a>
             </Button>
             <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
               <Phone className="w-4 h-4 mr-1" />
