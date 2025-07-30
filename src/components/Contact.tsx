@@ -8,6 +8,7 @@ import { Phone, MessageCircle, Mail, MapPin, Clock } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
+import { supabase } from "@/integrations/supabase/client";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -32,32 +33,25 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     try {
-      // Send email with form data to immy01@hotmail.com
-      const emailData = {
-        to: "immy01@hotmail.com",
-        subject: "New Quote Request from Road Rescue UK",
-        html: `
-          <h2>New Quote Request</h2>
-          <p><strong>Name:</strong> ${values.name}</p>
-          <p><strong>Phone:</strong> ${values.phone}</p>
-          <p><strong>Email:</strong> ${values.email}</p>
-          <p><strong>Vehicle:</strong> ${values.vehicle}</p>
-          <p><strong>Message:</strong> ${values.message}</p>
-          <p><strong>Submitted at:</strong> ${new Date().toLocaleString()}</p>
-        `,
-      };
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: values
+      });
 
-      // For now, just show success message - in production you'd send to your email service
+      if (error) {
+        throw error;
+      }
+
       toast({
         title: "Quote request sent!",
-        description: "We'll get back to you as soon as we can.",
+        description: "We'll get back to you within 24 hours.",
       });
       
       form.reset();
     } catch (error) {
+      console.error('Error sending email:', error);
       toast({
-        title: "Error",
-        description: "Failed to send quote request. Please try again.",
+        title: "Error sending message",
+        description: "Please try again or call us directly.",
         variant: "destructive",
       });
     }
