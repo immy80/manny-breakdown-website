@@ -16,43 +16,41 @@ const Header = () => {
     <header className="bg-background border-b border-border sticky top-0 z-50">
       {/* Top bar with contact info */}
       <div className="bg-secondary text-secondary-foreground">
-        <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
-          <div className="flex space-x-4">
+        <div className="container mx-auto px-2 sm:px-4 py-1 sm:py-2 flex justify-between items-center text-xs sm:text-sm">
+          <div className="flex space-x-2 sm:space-x-4">
             <a href="tel:07940553685" className="flex items-center space-x-1 hover:text-accent transition-colors">
-              <Phone className="w-4 h-4" />
-              <span>Call us: 07940 553685</span>
+              <Phone className="w-3 h-3 sm:w-4 sm:h-4" />
+              <span className="hidden sm:inline">Call us: 07940 553685</span>
+              <span className="sm:hidden">07940 553685</span>
             </a>
-            <a href="tel:07561762745" className="flex items-center space-x-1 hover:text-accent transition-colors">
+            <a href="tel:07561762745" className="hidden sm:flex items-center space-x-1 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
               <span>Call us: 07561 762745</span>
             </a>
           </div>
           <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
-            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
+            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 text-xs sm:text-sm px-2 sm:px-3" asChild>
               <a href="https://wa.me/447940553685" target="_blank" rel="noopener noreferrer">
-                <MessageCircle className="w-4 h-4 mr-1" />
-                WhatsApp 07940 553685
+                <MessageCircle className="w-3 h-3 sm:w-4 sm:h-4 mr-1" />
+                <span className="hidden sm:inline">WhatsApp 07940 553685</span>
+                <span className="sm:hidden">WhatsApp</span>
               </a>
             </Button>
-            <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
+            <Button size="sm" variant="outline" className="hidden sm:flex bg-green-600 text-white border-green-600 hover:bg-green-700" asChild>
               <a href="https://wa.me/447561762745" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-1" />
                 WhatsApp 07561 762745
               </a>
             </Button>
-            {/* <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
-              <Phone className="w-4 h-4 mr-1" />
-              Call us
-            </Button> */}
           </div>
         </div>
       </div>
 
       {/* Main navigation */}
-      <div className="container mx-auto px-4 py-4">
+      <div className="container mx-auto px-2 sm:px-4 py-2 sm:py-4">
         <nav className="flex items-center justify-between">
           <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold">
+            <div className="text-lg sm:text-2xl font-bold">
               <span className="text-primary">CHESHIRE</span>
               <span className="text-secondary"> BREAKDOWN RECOVERY</span>
             </div>
