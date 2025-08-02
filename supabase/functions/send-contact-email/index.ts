@@ -29,8 +29,9 @@ const handler = async (req: Request): Promise<Response> => {
     console.log("Sending contact email:", { name, email, vehicle });
 
     const emailResponse = await resend.emails.send({
-      from: "Breakdown Service <onboarding@resend.dev>",
+      from: "Cheshire Autos <onboarding@resend.dev>",
       to: ["cheshireautos1@gmail.com"],
+      reply_to: email,
       subject: `New Quote Request from ${name}`,
       html: `
         <h2>New Quote Request</h2>
