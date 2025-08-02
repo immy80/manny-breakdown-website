@@ -1,5 +1,5 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import breakdownImage from "@/assets/breakdown-service.jpg";
+import breakdownImage from "@/assets/uk-breakdown-truck.jpg";
 import tireImage from "@/assets/tire-service.jpg";
 import batteryImage from "@/assets/battery-service.jpg";
 import fuelImage from "@/assets/fuel-service.jpg";
