@@ -206,7 +206,11 @@ const Contact = () => {
                       </FormItem>
                     )}
                   />
-                  <Button type="submit" className="w-full bg-primary hover:bg-primary/90">
+                  <Button 
+                    type="submit" 
+                    className="w-full bg-primary hover:bg-primary/90"
+                    onClick={() => console.log('Button clicked!')}
+                  >
                     Get Free Quote
                   </Button>
                 </form>
