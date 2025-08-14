@@ -33,6 +33,7 @@ const Contact = () => {
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
     console.log('Form submitted with values:', values);
+    console.log('Supabase URL:', 'https://ycymknzmaijxksqqcitu.supabase.co');
     try {
       console.log('Calling send-contact-email function...');
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
