@@ -27,10 +27,11 @@ const handler = async (req: Request): Promise<Response> => {
     const { name, phone, email, vehicle, message }: ContactEmailRequest = await req.json();
 
     console.log("Sending contact email:", { name, email, vehicle });
+    console.log("RESEND_API_KEY exists:", !!Deno.env.get("RESEND_API_KEY"));
 
     const emailResponse = await resend.emails.send({
       from: "Cheshire Autos <onboarding@resend.dev>",
-      to: "cheshireautos1@gmail.com", // Change this to your desired email
+      to: "cheshireautos1@gmail.com",
       reply_to: email,
       subject: `New Quote Request from ${name}`,
       html: `
@@ -48,7 +49,15 @@ const handler = async (req: Request): Promise<Response> => {
 
     console.log("Email sent successfully:", emailResponse);
 
-    return new Response(JSON.stringify({ success: true }), {
+    if (emailResponse.error) {
+      console.error("Resend API error:", emailResponse.error);
+      throw new Error(`Resend error: ${emailResponse.error.message}`);
+    }
+
+    return new Response(JSON.stringify({ 
+      success: true, 
+      emailId: emailResponse.data?.id 
+    }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
