@@ -32,38 +32,15 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
-    console.log('Form submitted with values:', values);
-    console.log('Supabase URL:', 'https://ycymknzmaijxksqqcitu.supabase.co');
     try {
-      console.log('Calling send-contact-email function...');
-      const response = await fetch(`https://ycymknzmaijxksqqcitu.supabase.co/functions/v1/send-contact-email`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InljeW1rbnptYWlqeGtzcXFjaXR1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTM5MDk5MzgsImV4cCI6MjA2OTQ4NTkzOH0.dYVCcbsAdm9A_imhoEOgq8zGHMvZWaSePJLYAaIF6Oc`,
-        },
-        body: JSON.stringify(values)
+      const { data, error } = await supabase.functions.invoke('send-contact-email', {
+        body: values
       });
 
-      console.log('Response status:', response.status);
-      const responseText = await response.text();
-      console.log('Response text:', responseText);
-
-      let data;
-      try {
-        data = JSON.parse(responseText);
-      } catch (e) {
-        console.error('Failed to parse response as JSON:', responseText);
-        throw new Error(`Invalid JSON response: ${responseText}`);
+      if (error) {
+        throw error;
       }
 
-      console.log('Function response:', data);
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${data.error || responseText}`);
-      }
-
-      console.log('Email sent successfully!');
       toast({
         title: "Quote request sent!",
         description: "We'll get back to you within 24 hours.",
@@ -226,7 +203,6 @@ const Contact = () => {
                   <Button 
                     type="submit" 
                     className="w-full bg-primary hover:bg-primary/90"
-                    onClick={() => console.log('Button clicked!')}
                   >
                     Get Free Quote
                   </Button>
