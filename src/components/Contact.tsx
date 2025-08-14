@@ -32,15 +32,21 @@ const Contact = () => {
   });
 
   const onSubmit = async (values: z.infer<typeof formSchema>) => {
+    console.log('Form submitted with values:', values);
     try {
+      console.log('Calling send-contact-email function...');
       const { data, error } = await supabase.functions.invoke('send-contact-email', {
         body: values
       });
 
+      console.log('Function response:', { data, error });
+
       if (error) {
+        console.error('Supabase function error:', error);
         throw error;
       }
 
+      console.log('Email sent successfully!');
       toast({
         title: "Quote request sent!",
         description: "We'll get back to you within 24 hours.",
