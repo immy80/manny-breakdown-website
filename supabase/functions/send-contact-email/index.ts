@@ -24,15 +24,13 @@ const handler = async (req: Request): Promise<Response> => {
   }
 
   try {
-    console.log("Function invoked successfully");
     const { name, phone, email, vehicle, message }: ContactEmailRequest = await req.json();
 
-    console.log("Processing contact form:", { name, email, vehicle });
-    console.log("RESEND_API_KEY configured:", !!Deno.env.get("RESEND_API_KEY"));
+    console.log("Sending contact email:", { name, email, vehicle });
 
     const emailResponse = await resend.emails.send({
       from: "Cheshire Autos <onboarding@resend.dev>",
-      to: "cheshireautos1@gmail.com",
+      to: "cheshireautos1@gmail.com", // Change this to your desired email
       reply_to: email,
       subject: `New Quote Request from ${name}`,
       html: `
@@ -48,19 +46,9 @@ const handler = async (req: Request): Promise<Response> => {
       `,
     });
 
-    console.log("Resend response:", emailResponse);
+    console.log("Email sent successfully:", emailResponse);
 
-    if (emailResponse.error) {
-      console.error("Resend API error:", emailResponse.error);
-      throw new Error(`Email delivery failed: ${emailResponse.error.message}`);
-    }
-
-    console.log("Email sent successfully with ID:", emailResponse.data?.id);
-
-    return new Response(JSON.stringify({ 
-      success: true, 
-      emailId: emailResponse.data?.id 
-    }), {
+    return new Response(JSON.stringify({ success: true }), {
       status: 200,
       headers: {
         "Content-Type": "application/json",
@@ -68,12 +56,9 @@ const handler = async (req: Request): Promise<Response> => {
       },
     });
   } catch (error: any) {
-    console.error("Function error:", error);
+    console.error("Error in send-contact-email function:", error);
     return new Response(
-      JSON.stringify({ 
-        error: error.message || "Internal server error",
-        details: error.toString()
-      }),
+      JSON.stringify({ error: error.message }),
       {
         status: 500,
         headers: { "Content-Type": "application/json", ...corsHeaders },
