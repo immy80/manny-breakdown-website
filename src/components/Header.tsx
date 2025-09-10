@@ -20,24 +20,24 @@ const Header = () => {
           <div className="flex space-x-4">
             <a href="tel:07940553685" className="flex items-center space-x-1 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
-              <span>Call us: 07940 553685</span>
+              <span>Call us: 07561 762745</span>
             </a>
             <a href="tel:07561762745" className="flex items-center space-x-1 hover:text-accent transition-colors">
               <Phone className="w-4 h-4" />
-              <span>Call us: 07561 762745</span>
+              <span>Call us: 07940 553685</span>
             </a>
           </div>
           <div className="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-2">
             <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 pulse" asChild>
               <a href="https://wa.me/447940553685" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-1" />
-                WhatsApp 07940 553685
+                WhatsApp 07561 762745
               </a>
             </Button>
             <Button size="sm" variant="outline" className="bg-green-600 text-white border-green-600 hover:bg-green-700 pulse" asChild>
               <a href="https://wa.me/447561762745" target="_blank" rel="noopener noreferrer">
                 <MessageCircle className="w-4 h-4 mr-1" />
-                WhatsApp 07561 762745
+                WhatsApp 07940 553685
               </a>
             </Button>
             {/* <Button size="sm" variant="outline" className="border-white text-secondary hover:bg-white hover:text-secondary">
