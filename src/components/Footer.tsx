@@ -35,7 +35,7 @@ const Footer = () => {
             <div className="space-y-3 text-secondary-foreground/80">
               <div className="flex items-center space-x-2">
                 <Phone className="w-4 h-4" />
-                <span>07940 553685 or 07561 762745</span>
+                <span>07561 762745 or 07940 553685</span>
               </div>
               <div className="flex items-center space-x-2">
                 <MessageCircle className="w-4 h-4" />
